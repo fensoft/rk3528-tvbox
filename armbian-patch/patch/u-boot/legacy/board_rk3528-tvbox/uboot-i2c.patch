@@ -1,0 +1,25 @@
+diff --git a/arch/arm/dts/rk3528-evb.dts b/arch/arm/dts/rk3528-evb.dts
+index 600601aa948..248a53ee710 100644
+--- a/arch/arm/dts/rk3528-evb.dts
++++ b/arch/arm/dts/rk3528-evb.dts
+@@ -29,3 +29,20 @@
+                };
+        };
+ };
++
++&i2c1 {
++    compatible = "rockchip,rk3328-i2c";
++    status = "okay";
++    #u-boot,dm-pre-reloc;
++    clock-frequency = <100000>;
++    probed = <1>;
++    /*pinctrl-0 = <&i2c1m0_xfer>;*/
++    rockchip,pins =
++        <4 RK_PA3 2 &pcfg_pull_none_smt>,
++        <4 RK_PA2 2 &pcfg_pull_none_smt>;
++    bootph-all;
++};
++&cru {
++    u-boot,dm-pre-reloc;
++    status = "okay";
++};
