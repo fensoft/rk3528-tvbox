@@ -1713,7 +1713,7 @@
 		pinctrl-0 = <&i2c1m0_xfer>;
 		#address-cells = <1>;
 		#size-cells = <0>;
-		status = "disabled";
+		status = "okay";
 	};
 
 	i2c2: i2c@ffa60000 {
